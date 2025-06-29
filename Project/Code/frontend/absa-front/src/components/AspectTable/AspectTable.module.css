@@ -1,0 +1,191 @@
+/* AspectTable.module.css */
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+  animation: slideUp 0.5s ease-out;
+}
+
+.table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.table th {
+  padding: 1.2rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f7fafc;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Styles pour les polarités */
+.positive {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%) !important;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  margin: 0.2rem 0;
+  display: inline-block;
+  min-width: 80px;
+}
+
+.negative {
+  background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%) !important;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  margin: 0.2rem 0;
+  display: inline-block;
+  min-width: 80px;
+}
+
+.neutral {
+  background: linear-gradient(135deg, #a0aec0 0%, #718096 100%) !important;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  margin: 0.2rem 0;
+  display: inline-block;
+  min-width: 80px;
+}
+
+/* Styles spécifiques pour le tableau agrégé */
+.aspectCell {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 1.1rem;
+}
+
+.countCell {
+  text-align: center;
+}
+
+.countBadge {
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.distributionCell {
+  min-width: 200px;
+}
+
+.distributionBar {
+  display: flex;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f1f5f9;
+  margin-bottom: 0.5rem;
+}
+
+.positiveBar {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  transition: width 0.3s ease;
+}
+
+.negativeBar {
+  background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+  transition: width 0.3s ease;
+}
+
+.neutralBar {
+  background: linear-gradient(135deg, #a0aec0 0%, #718096 100%);
+  transition: width 0.3s ease;
+}
+
+.distributionText {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.positiveText {
+  color: #38a169;
+}
+
+.negativeText {
+  color: #e53e3e;
+}
+
+.neutralText {
+  color: #718096;
+}
+
+.confidenceCell {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: #4a5568;
+  text-align: center;
+}
+
+/* Animation d'entrée */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.9rem;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.8rem;
+  }
+  
+  .positive,
+  .negative,
+  .neutral {
+    min-width: 60px;
+    font-size: 0.8rem;
+  }
+  
+  .distributionCell {
+    min-width: 150px;
+  }
+}
